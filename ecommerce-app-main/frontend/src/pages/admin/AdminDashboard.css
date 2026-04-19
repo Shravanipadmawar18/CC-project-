@@ -1,0 +1,369 @@
+/**
+ * ===========================================
+ * ADMIN DASHBOARD STYLES
+ * ===========================================
+ */
+
+.admin-dashboard {
+  padding: 2rem 0;
+  background-color: var(--gray-50);
+  min-height: 100vh;
+}
+
+/* Admin Header */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  font-size: 1.75rem;
+  margin: 0 0 0.25rem;
+}
+
+.admin-header p {
+  margin: 0;
+  color: var(--text-light);
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border-radius: var(--radius-md);
+  color: var(--white);
+}
+
+.stat-icon.revenue {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-icon.orders {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.stat-icon.products {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.stat-icon.users {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.stat-info h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-light);
+  margin: 0 0 0.25rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem;
+}
+
+.stat-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.stat-change.positive {
+  color: var(--success);
+}
+
+.stat-change.negative {
+  color: var(--danger);
+}
+
+/* Order Status Summary */
+.order-status-summary {
+  margin-bottom: 2rem;
+}
+
+.order-status-summary h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.status-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.status-card svg {
+  font-size: 1.5rem;
+}
+
+.status-card.pending svg {
+  color: #f59e0b;
+}
+
+.status-card.processing svg {
+  color: #3b82f6;
+}
+
+.status-card.shipped svg {
+  color: #8b5cf6;
+}
+
+.status-card.delivered svg {
+  color: #10b981;
+}
+
+.status-count {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.status-label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Dashboard Tables */
+.dashboard-tables {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.table-section {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.table-header h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.view-all:hover {
+  color: var(--primary-dark);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* Admin Table */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.875rem 1.5rem;
+  text-align: left;
+}
+
+.admin-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  background-color: var(--gray-50);
+}
+
+.admin-table td {
+  font-size: 0.875rem;
+  border-top: 1px solid var(--gray-100);
+}
+
+.admin-table tr:hover {
+  background-color: var(--gray-50);
+}
+
+.admin-table a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.admin-table a:hover {
+  text-decoration: underline;
+}
+
+.customer-info,
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-name,
+.user-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.customer-email,
+.user-email {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.user-info {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-info > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--white);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--white);
+  border-radius: var(--radius-full);
+}
+
+.status-badge svg {
+  font-size: 0.625rem;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: var(--radius-full);
+}
+
+.role-badge.admin {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.role-badge.user {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.no-data {
+  text-align: center;
+  color: var(--text-light);
+  padding: 2rem !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .status-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-tables {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem 1rem;
+  }
+}

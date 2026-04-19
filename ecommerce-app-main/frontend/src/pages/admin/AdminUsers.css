@@ -1,0 +1,216 @@
+/**
+ * ===========================================
+ * ADMIN USERS PAGE STYLES
+ * ===========================================
+ */
+
+.admin-users {
+  padding: 2rem 0;
+  background-color: var(--gray-50);
+  min-height: 100vh;
+}
+
+/* User Stats */
+.user-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.user-stat {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  flex: 1;
+}
+
+.user-stat .stat-icon {
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+}
+
+.user-stat .stat-icon.customer {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.user-stat .stat-icon.admin {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+}
+
+.user-stat .stat-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.user-stat .stat-label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Users Table */
+.users-table th,
+.users-table td {
+  padding: 0.875rem 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-full);
+  color: var(--white);
+}
+
+.user-avatar.user {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.user-avatar.admin {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.user-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.user-email {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.user-email:hover {
+  color: var(--primary);
+}
+
+.user-email svg {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Role Select */
+.role-select {
+  padding: 0.375rem 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 1.75rem;
+}
+
+.role-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.role-select.user {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #2563eb;
+}
+
+.role-select.admin {
+  background-color: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: #7c3aed;
+}
+
+/* Order Count */
+.order-count {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.order-count svg {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* Date */
+.date {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--text-light);
+}
+
+.date svg {
+  font-size: 0.75rem;
+}
+
+/* Role Filter */
+.role-filter {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+/* No Users */
+.no-users {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.no-users svg {
+  font-size: 3rem;
+  color: var(--gray-300);
+  margin-bottom: 1rem;
+}
+
+.no-users h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.no-users p {
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-stats {
+    flex-direction: column;
+  }
+
+  .user-email svg,
+  .order-count svg,
+  .date svg {
+    display: none;
+  }
+}

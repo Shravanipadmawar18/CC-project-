@@ -1,0 +1,369 @@
+/**
+ * ===========================================
+ * PRODUCT IMAGE STYLES
+ * ===========================================
+ * 
+ * Styles for product images with:
+ * - Loading skeleton animation
+ * - Smooth transitions
+ * - Amazon-style gallery
+ * - Responsive design
+ */
+
+/* Base Image Container */
+.product-image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.product-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-image.loading {
+  opacity: 0;
+}
+
+.product-image.loaded {
+  opacity: 1;
+}
+
+/* Image hover effect */
+.product-image-container:hover .product-image.loaded {
+  transform: scale(1.05);
+}
+
+/* Loading Skeleton */
+.image-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+.skeleton-shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Placeholder (before lazy load) */
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.image-placeholder svg {
+  width: 40%;
+  height: 40%;
+  color: #dee2e6;
+}
+
+/* Product Thumbnails */
+.product-thumbnail {
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.product-thumbnail:hover {
+  border-color: #667eea;
+}
+
+.product-thumbnail.active {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.thumbnail-sm {
+  width: 50px;
+  height: 50px;
+}
+
+.thumbnail-md {
+  width: 70px;
+  height: 70px;
+}
+
+.thumbnail-lg {
+  width: 90px;
+  height: 90px;
+}
+
+/* Product Gallery (Amazon-style) */
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-main {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+}
+
+.gallery-main-image {
+  cursor: zoom-in;
+}
+
+.gallery-main.zoomed .gallery-main-image {
+  cursor: zoom-out;
+  transform: scale(1.5);
+}
+
+/* Gallery Navigation */
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.gallery-nav:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav svg {
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+.gallery-nav.prev {
+  left: 12px;
+}
+
+.gallery-nav.next {
+  right: 12px;
+}
+
+/* Image Counter */
+.gallery-counter {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Thumbnails Row */
+.gallery-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: #dee2e6 transparent;
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 3px;
+}
+
+/* Cart Item Image */
+.cart-item-image {
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.cart-item-image .product-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.cart-item-image .product-image-container:hover .product-image.loaded {
+  transform: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gallery-main {
+    border-radius: 8px;
+  }
+
+  .gallery-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .gallery-nav svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .gallery-nav.prev {
+    left: 8px;
+  }
+
+  .gallery-nav.next {
+    right: 8px;
+  }
+
+  .thumbnail-md {
+    width: 60px;
+    height: 60px;
+  }
+
+  .gallery-thumbnails {
+    gap: 8px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .product-image-container {
+    background-color: #2d3748;
+  }
+
+  .image-skeleton {
+    background: linear-gradient(90deg, #2d3748 25%, #3d4858 50%, #2d3748 75%);
+  }
+
+  .image-placeholder {
+    background-color: #2d3748;
+  }
+
+  .image-placeholder svg {
+    color: #4a5568;
+  }
+
+  .gallery-main {
+    background-color: #1a202c;
+    border-color: #2d3748;
+  }
+
+  .gallery-nav {
+    background: rgba(45, 55, 72, 0.95);
+  }
+
+  .gallery-nav:hover {
+    background: #2d3748;
+  }
+
+  .gallery-nav svg {
+    color: #e2e8f0;
+  }
+}
+
+/* Animation for image entrance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.product-image.loaded {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Error state styling */
+.product-image-container.error {
+  background-color: #fee2e2;
+}
+
+.product-image-container.error::after {
+  content: 'Image not available';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #dc2626;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Multiple images indicator */
+.image-count-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}

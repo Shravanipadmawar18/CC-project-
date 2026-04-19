@@ -1,0 +1,234 @@
+/**
+ * ===========================================
+ * PROFILE PAGE STYLES
+ * ===========================================
+ */
+
+.profile-page {
+  padding: 2rem 0 4rem;
+  min-height: 60vh;
+}
+
+.profile-page h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 2rem;
+}
+
+/* Layout */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Sidebar */
+.profile-sidebar {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.user-card {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--white));
+}
+
+.user-avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+}
+
+.user-avatar img,
+.user-avatar span {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.user-avatar span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.avatar-edit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background-color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+}
+
+.avatar-edit:hover {
+  color: var(--primary);
+}
+
+.user-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.user-card p {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.profile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.profile-nav button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: none;
+  background: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: all 0.2s;
+}
+
+.profile-nav button:hover {
+  background-color: var(--gray-100);
+}
+
+.profile-nav button.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Main Content */
+.profile-main {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 2rem;
+}
+
+.profile-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.profile-section > p {
+  color: var(--text-light);
+  margin: 0 0 2rem;
+}
+
+.profile-section form {
+  max-width: 500px;
+}
+
+.profile-section .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.profile-section label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.profile-section input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.profile-section input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.profile-section .input-hint {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  margin-top: 0.375rem;
+}
+
+.profile-section .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-sidebar {
+    order: 2;
+  }
+
+  .profile-main {
+    order: 1;
+  }
+
+  .user-card {
+    padding: 1.5rem;
+  }
+
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .user-avatar span {
+    font-size: 2rem;
+  }
+
+  .profile-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .profile-nav button {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .profile-main {
+    padding: 1.5rem;
+  }
+}
